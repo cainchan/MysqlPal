@@ -57,6 +57,8 @@ class MysqlPal:
 				sql += " WHERE %s"%criteria.get('where')
 			if criteria.get('groupby'):
 				sql += " GROUP BY %s"%criteria.get('groupby')
+			if criteria.get('having'):
+				sql += " HAVING %s"%criteria.get('having')
 			if criteria.get('orderby'):
 				sql += " ORDER BY %s"%criteria.get('orderby')
 			if criteria.get('limit'):
