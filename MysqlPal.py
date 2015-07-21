@@ -20,6 +20,7 @@ class MysqlPal:
 		port = cf.get(database,"port")
 		#连接
 		self.conn = MySQLdb.connect(host=host,user=user,passwd=passwd,db=db,port=int(port),charset="utf8")
+		self.conn.autocommit(True)
 		self.cursor = self.conn.cursor(cursorclass = MySQLdb.cursors.DictCursor)
 	def close(self):
 		self.cursor.close()
